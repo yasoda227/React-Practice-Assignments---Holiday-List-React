@@ -1,4 +1,3 @@
-
 import React, { Component, useState } from "react";
 import '../styles/App.css';
 
@@ -42,14 +41,14 @@ class App extends Component {
       <div id="main">
         {/* Do not remove the main div */}
         <ol>
-          <li key="location1">Goa</li>
-          <li key="location2">Amsterdam</li>
-          <li key="location3">New York</li>
-          <li key="location4">Darjeeling</li>
-          <li key="location5">Tokyo</li>
-          <li key="location6">Lonavala</li>
+          {
+            this.cityList.slice(0,6).filter((city)=>city.country=="India").map((city,key)=>(
+              <li key={`location${key +1}`}>{city.name}</li>
+
+            
+            ))
+          }
         </ol>
-                
       </div>
     )
   }
